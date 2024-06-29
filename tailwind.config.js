@@ -19,6 +19,10 @@ export default {
       },
       width: {
         '1/5': '20%',
+        '3/10': '30%',
+      },
+      maxWidth: {
+        '1700px': '1700px',
       },
       borderRadius: {
         '50px': '50px',
