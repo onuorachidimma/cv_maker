@@ -9,7 +9,7 @@ function Signup() {
           <div className="flex flex-col items-center justify-center h-full">
             <div className="flex flex-col items-center justify-center text-center gap-2">
               <h1 className="text-6xl font-semibold">Land Your Dream Job</h1>
-              <p className="text-base">
+              <p className="text-xl">
                 Join Our Community With Over 1 Million Success Stories
               </p>
             </div>
@@ -18,8 +18,8 @@ function Signup() {
             </div>
 
             <div className="flex flex-col items-center justify-center">
-              <p className="mb-5 text-xl text-[#9C9C9C]">
-                Or sign up with your email
+              <p className="mb-5 text-lg text-[#9C9C9C]">
+                Or sign up with your Email
               </p>
               <input
                 placeholder="Email"
