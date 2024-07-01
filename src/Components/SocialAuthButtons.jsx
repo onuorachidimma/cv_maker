@@ -1,4 +1,4 @@
-import googleIcon from "../assets/images/Google svg.svg";
+import googleIcon from "../assets/images/google.svg";
 import LinkedinIcon from "../assets/images/Lindin-icon.svg";
 function SocialAuthButtons() {
   //   const handleGoogleLogin = () => {
@@ -25,7 +25,7 @@ function SocialAuthButtons() {
       </button>
       <button
         //   onClick={handleLinkedInSignup}
-        className="  bg-[#2427AB] text-[#FFFFFF] pr-20 pl-7 text-xs sm:text-x md:text-base font-medium  flex justify-center items-center rounded-3xl py-2"
+        className="  bg-[#1e6ae4] text-[#FFFFFF] pr-20 pl-7 text-xs sm:text-x md:text-base font-medium  flex justify-center items-center rounded-3xl py-2"
       >
         <img
           className="block pr-2 "
