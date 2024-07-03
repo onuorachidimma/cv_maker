@@ -16,6 +16,8 @@ export default {
         customTextGray: '#D5CFCF',
         customBlue: '#2427AB',
         customLightBlue: '#4285F4',
+        customYellow: '#FBBC05',
+        customYellowB: '#D3A10F',
       },
       width: {
         '1/5': '20%',
