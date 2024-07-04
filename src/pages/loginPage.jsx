@@ -85,7 +85,7 @@ const LoginPage = () => {
         </div>
       </div>
 
-      <div className="hidden md:block md:w-6/12 lg:w-1/3 bg-purple text-white relative">
+      <div className="hidden md:block md:w-6/12 lg:w-1/3 bg-customDarkGreen text-white relative">
         <div className="w-8/12 mx-auto mt-14 relative">
           <img className="w-full" src={loginPicture} alt="reviewer Picture" />
           <img className="absolute bottom-0 left-0" src={yellowAngle} alt="" />
