@@ -33,7 +33,7 @@ export default {
         'tl-45px': '45px 0 0 0', // top-left corner
       },
       fontSize: {
-        '230px': '230px',
+        '180px': '180px',
       },
       lineHeight: {
         '156px': '156px',
