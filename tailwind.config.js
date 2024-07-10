@@ -35,6 +35,9 @@ export default {
       lineHeight: {
         '156px': '156px',
       },
+      height: {
+        '696px': '696px',
+      },
     },
   },
   plugins: [],
