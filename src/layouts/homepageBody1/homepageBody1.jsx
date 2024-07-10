@@ -1,18 +1,22 @@
 import SectionHeading from "./sectionHeading"
 import SignupFreeButton from "../buttons/signupFreeBtn"
+import coverLetterSample1 from "../../assets/images/coverLetterSample1.svg"
 const HomepageBody1 = () => {
     return(
         <div className="mb-32  ">
-            <div className="flex flex-wrap justify-between mb-20 w-10/12 mx-auto lg:w-full lg:pl-20 mt-5 md:mb-32">
+            <div className="flex flex-wrap justify-between items-center mb-20 w-10/12 mx-auto lg:w-full lg:pl-36 mt-5 md:mb-32">
                 <div className="w-full sm:w-full md:w-5/12 lg:w-4/12 md:pr-5 lg:pr-0">
-                    <SectionHeading heading="Transform Your Career Story into a Visual Masterpiece" headingText="Step into a world where your professional journey is beautifully showcased and your future possibilities are endless. Our platform empowers you to create a captivating online CV that highlights your achievements, skills, and unique personality. "/>
+                    <SectionHeading heading="Transform Your Career with a Stunning Cover Letter" headingText="Step into a world where your professional journey is beautifully showcased and your future possibilities are endless. Our platform empowers you to create a captivating online CV that highlights your achievements, skills, and unique personality. "/>
                     <div className="pt-5 mb-10">
                         <SignupFreeButton />
                     </div>
                 </div>
 
-                <div className="bg-customDarkGreen w-full sm:w-full md:w-7/12 lg:w-6/12 rounded-tl-45px p-5">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit reprehenderit ex perferendis aspernatur labore ipsam maiores aperiam, laborum beatae, autem eius commodi reiciendis praesentium sunt quia a error? Atque obcaecati harum exercitationem quibusdam! Molestias temporibus reprehenderit sit tenetur doloribus placeat distinctio debitis tempora facere repellendus natus blanditiis atque quod, inventore optio, in architecto! Deleniti neque dolor dolorum enim, illum amet modi vitae quasi, cupiditate deserunt ex maiores harum minima similique vel voluptatem quaerat asperiores officiis tempore odit fuga molestiae, impedit perspiciatis error? Nostrum deleniti sunt, aperiam tempora quas saepe impedit a suscipit harum ipsa consequuntur quibusdam officiis eum dolorem! Perferendis!</p>
+                <div className="w-full md:w-6/12 flex justify-left items-center relative">
+                    <div className="hidden md:block bg-customDarkGreen h-96 absolute right-0 left-20">
+                        {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, aperiam. */}
+                    </div>
+                    <img src={coverLetterSample1} alt="" className="z-10 w-full h-696px lg:w-9/12"/>
                 </div>
             </div>
 
