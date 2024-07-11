@@ -16,6 +16,7 @@ export default {
         customLightBlue: '#4285F4',
         customYellow: '#FBBC05',
         customYellowB: '#D3A10F',
+        customBrightYellow: '#FBBC05'
       },
       width: {
         '1/5': '20%',
