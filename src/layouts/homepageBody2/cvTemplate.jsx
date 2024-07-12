@@ -1,46 +1,49 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import Carousel1 from '../../assets/images/Carousel1.svg';
+import Carousel2 from '../../assets/images/Carousel.svg';
+import Carousel3 from '../../assets/images/Carousel1.svg';
 
+const images = [
+  { src: Carousel1, alt: 'CaroselCVImage 1' },
+  { src: Carousel2, alt: 'CaroselCVImage 2' },
+  { src: Carousel3, alt: 'CaroselCVImage 3' },
+];
 
-const cvTemplate = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const items = [
-    { src: 'src/assets/images/Carousel1.svg', alt: 'Image 1' },
-    { src: 'src/assets/images/Carousel.svg', alt: 'Image 2' },
-    { src: 'src/assets/images/Carousel1.svg', alt: 'Image 3' },
-  ];
+const CvTemplate = () => {
+  const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [items.length]);
+  const handleMouseEnter = (index) => {
+    setCurrent(index);
+  };
 
   return (
-    <div className="container mx-auto my-10">
-      <h1 className="text-center text-4xl font-bold mb-6">Templates to win recruiters over</h1>
-      <div className="flex justify-center">
-        <div className="carousel-container flex items-center space-x-4 overflow-hidden">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className={`carousel-item flex items-center justify-center bg-white p-4 rounded-lg transition-transform duration-500 ${
-                currentIndex === index
-                  ? 'transform scale-110'
-                  : 'transform scale-90'
-              }`}
-            >
-              <img
-                src={item.src}
-                alt={item.alt}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
+    <div className="flex flex-col items-center justify-center pt-20 pb-20 w-full">
+      <h1 className="text-center text-4xl font-bold mb-14">Templates to win recruiters over</h1>
+      <div className="relative w-1/4 flex justify-center items-center flex-row">
+        {images.map((image, index) => (
+          <img
+            key={index}
+            src={image.src}
+            alt={image.alt}
+            className={`w-full h-full transition-transform duration-300 ${
+              index === current ? 'transform scale-110 z-10' : 'transform scale-100'
+            }`}
+            onMouseEnter={() => handleMouseEnter(index)}
+          />
+        ))}
+      </div>
+      <div className="flex mt-4 pt-8 flex-row justify-content: center">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`w-3 h-3 rounded-full ${
+              index === current ? 'bg-customDarkGreen' : 'bg-gray-300'
+            }`}
+          ></span>
+        ))}
       </div>
     </div>
   );
 };
 
-export default cvTemplate;
+export default CvTemplate;
