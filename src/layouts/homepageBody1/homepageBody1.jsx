@@ -8,7 +8,7 @@ const HomepageBody1 = () => {
   return (
     <div className="mb-32  ">
       {/* ############## Homepage Cover Letter section ####################### */}
-      <div className="flex flex-wrap justify-between items-center mb-4 md:mb-20 lg:mb-32 w-10/12 mx-auto lg:w-full lg:pl-36 mt-5 ">
+      <div className="flex flex-wrap justify-between items-center  md:mb-8 lg:mb-16 w-10/12 mx-auto lg:w-full lg:pl-36  md:mt-5 ">
         <div className="w-full sm:w-full md:w-5/12 lg:w-4/12 md:pr-5 lg:pr-0">
           <Link
             to="#"
@@ -39,8 +39,8 @@ const HomepageBody1 = () => {
 
       <div>
         <div className="text-center">
-          <h3 className="font-bold text-5xl mb-4 ">Testimonials</h3>
-          <p className="w-5/12 mx-auto text-2xl pb-12">
+          <h3 className="font-bold text-4xl lg:text-5xl mb-4 ">Testimonials</h3>
+          <p className="w-5/12 mx-auto text-base lg:text-2xl pb-12">
             Join thousands of professionals to enhance your resume, track your
             job search, and land a job you love.
           </p>
