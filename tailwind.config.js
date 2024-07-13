@@ -16,7 +16,8 @@ export default {
         customLightBlue: '#4285F4',
         customYellow: '#FBBC05',
         customYellowB: '#D3A10F',
-        customBrightYellow: '#FBBC05'
+        customBrightYellow: '#FBBC05',
+        customLightGreen: '#77CBA22E',
       },
       width: {
         '1/5': '20%',
@@ -31,7 +32,7 @@ export default {
         'tl-45px': '45px 0 0 0', // top-left corner
       },
       fontSize: {
-        '180px': '180px',
+        '150px': '150px',
       },
       lineHeight: {
         '156px': '156px',
