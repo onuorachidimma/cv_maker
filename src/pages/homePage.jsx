@@ -1,13 +1,14 @@
 import React from 'react';
-import HomepageBody2 from '../layouts/HomepageBody2';
+import HomepageBody2 from '../layouts/homepageBody2/HomepageBody2';
 import HomepageBody1 from '../layouts/homepageBody1/homepageBody1';
-
+import CvTemplate from '../layouts/homepageBody2/cvTemplate';
 
 const HomePage = () => {
     return(
         <>
             <HomepageBody1 />
             <HomepageBody2/>
+            <CvTemplate/>
         </>
 
     )
