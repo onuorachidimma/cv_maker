@@ -1,6 +1,19 @@
+import { useState } from "react";
 import Logo from "../assets/images/Logo-whitebg.svg";
 import Socialsbtn from "../components/SocialAuthButtons";
+import Modal from "../components/Modal";
+
 function Signup() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="flex h-screen">
       <div className="flex h-full flex-1 flex-col bg-white p-5">
@@ -8,7 +21,7 @@ function Signup() {
           <img className="h-24 w-96" src={Logo} alt="Logo" />
           <div className="flex flex-col items-center justify-center h-full">
             <div className="flex flex-col items-center justify-center text-center gap-2">
-              <h1 className="md:text-5xl lg:text-6xl font-semibold">
+              <h1 className="md:text-6xl sm:text-5xl lg:text-7xl font-semibold">
                 Land Your Dream Job
               </h1>
               <p className="text-xl md:text-xl">
@@ -25,10 +38,13 @@ function Signup() {
               </p>
               <input
                 placeholder="Email"
-                className="w-full max-w-sm md:max-w-md lg:max-w-lg rounded border border-gray-300 py-5 pl-5 pr-6"
+                className="w-full lg:max-w-lg rounded border border-gray-300 py-5 pl-5 pr-10"
               />
-              <button className="mt-6 rounded-3xl bg-[#FBBC05] px-5 py-2.5 text-sm font-semibold">
-                Sign Up - It's Completely free
+              <button
+                onClick={openModal}
+                className="mt-6 rounded-3xl bg-[#FBBC05] px-3 py-2.5 text-sm font-semibold"
+              >
+                Sign Up - It's Completely Free
               </button>
             </div>
           </div>
@@ -44,7 +60,9 @@ function Signup() {
         </div>
       </div>
 
-      <div className="hidden lg:block lg:w-[10%]  md:bg-[#005148] lg:bg-[#005148]" />
+      <div className="hidden lg:block lg:w-[10%] md:bg-[#005148] lg:bg-[#005148]" />
+
+      {isModalOpen && <Modal closeModal={closeModal} />}
     </div>
   );
 }
