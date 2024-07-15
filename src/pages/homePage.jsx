@@ -10,9 +10,10 @@ const HomePage = () => {
         <>
             <HomepageNavbar />
             <Hero />
-            <HomepageBody1 />
-            <HomepageBody2/>
             <CvTemplate/>
+            <HomepageBody1 />
+            {/* <HomepageBody2/> */}
+            
         </>
 
     )
