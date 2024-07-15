@@ -1,4 +1,4 @@
-
+import heroImage from "../assets/images/HeroImage.png"
 
 function Hero() {
   return (
@@ -12,7 +12,7 @@ function Hero() {
         </div>
         <div className=" container flex justify-center flex-row gap-2">
           <div className="container bg-customGreen w-5 h-auto rounded-tl-3xl rounded-br-3xl"></div>
-          <img src="src\assets\images\HeroImage.png" alt="custom CV image" />
+          <img src={heroImage} alt="custom CV image" />
         </div>
       </div>
     </>
