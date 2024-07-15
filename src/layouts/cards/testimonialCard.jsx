@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import reviewerImage from "../../assets/images/reviewerImage.svg";
+import reviewerImage1 from "../../assets/images/reviewerImage1.svg";
+import reviewerImage2 from "../../assets/images/reviewerImage2.svg";
 const reviews = [
   {
     id: 1,
@@ -14,21 +16,21 @@ const reviews = [
     name: "GodHelp Tinubu",
     review:
       "The step-by-step guidance and helpful prompts were a great addition. They provided useful tips on what information to include and how to format it effectively.",
-    image: reviewerImage,
+    image: reviewerImage1,
   },
   {
     id: 3,
     name: "GodHelp Tinubu",
     review:
       "The step-by-step guidance and helpful prompts were a great addition. They provided useful tips on what information to include and how to format it effectively.",
-    image: reviewerImage,
+    image: reviewerImage2,
   },
   {
     id: 4,
     name: "GodHelp Tinubu",
     review:
       "The step-by-step guidance and helpful prompts were a great addition. They provided useful tips on what information to include and how to format it effectively.",
-    image: reviewerImage,
+    image: reviewerImage1,
   },
 ];
 const TestimonialCard = () => {
