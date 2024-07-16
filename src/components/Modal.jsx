@@ -80,6 +80,19 @@ function Modal({ closeModal }) {
         <h2 className="text-2xl font-semibold mb-4 text-center">Sign Up</h2>
         <div className="mb-4">
           <input
+            placeholder="Type in your firstname"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div className="mb-4">
+          <input
+            placeholder="Type in your lastname"
+            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+
+        <div className="mb-4">
+          <input
             type="email"
             placeholder="Email"
             value={email}
