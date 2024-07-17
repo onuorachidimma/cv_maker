@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { FaEye, FaTimes } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Vector_icon from "../assets/images/Vector-icon.svg";
 
 function Modal({ closeModal }) {
   const [email, setEmail] = useState("");
@@ -9,7 +10,7 @@ function Modal({ closeModal }) {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const [errors, setErrors] = useState({});
-  const [passwordCriteria, setPasswordCriteria] = useState({
+  const [setPasswordCriteria] = useState({
     length: false,
     capital: false,
     lowercase: false,
@@ -68,23 +69,26 @@ function Modal({ closeModal }) {
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className=" text-20px font-sans fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white rounded-lg shadow-lg p-6 w-11/12 max-w-md mx-auto relative">
+        <p className="font-bold text-center pb-3">Sign Up</p>
+
         <button
           type="button"
           onClick={closeModal}
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-800"
         >
-          <FaTimes size={24} />
+          <img src={Vector_icon} alt="vector-icon" />
         </button>
-        <h2 className="text-2xl font-semibold mb-4 text-center">Sign Up</h2>
         <div className="mb-4">
+          <p className="pb-1">First Name</p>
           <input
             placeholder="Type in your firstname"
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
+          <p className="pb-1">Last Name</p>
           <input
             placeholder="Type in your lastname"
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -92,6 +96,8 @@ function Modal({ closeModal }) {
         </div>
 
         <div className="mb-4">
+          <p className="pb-1">Email</p>
+
           <input
             type="email"
             placeholder="Email"
@@ -104,6 +110,7 @@ function Modal({ closeModal }) {
           )}
         </div>
         <div className="mb-4 relative">
+          <p className="pb-1">Password</p>
           <input
             type={passwordVisible ? "text" : "password"}
             placeholder="Password"
@@ -116,13 +123,18 @@ function Modal({ closeModal }) {
             onClick={() => setPasswordVisible(!passwordVisible)}
             className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600"
           >
-            <FaEye />
+            {passwordVisible ? (
+              <FaEyeSlash className="mt-5" />
+            ) : (
+              <FaEye className="mt-5" />
+            )}
           </button>
           {errors.password && (
             <p className="text-red-500 text-xs mt-1">{errors.password}</p>
           )}
         </div>
         <div className="mb-6 relative">
+          <p className="pb-1">Confirm Password</p>
           <input
             type={confirmPasswordVisible ? "text" : "password"}
             placeholder="Confirm Password"
@@ -135,17 +147,21 @@ function Modal({ closeModal }) {
             onClick={() => setConfirmPasswordVisible(!confirmPasswordVisible)}
             className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600"
           >
-            <FaEye />
+            {passwordVisible ? (
+              <FaEyeSlash className="mt-5" />
+            ) : (
+              <FaEye className="mt-5" />
+            )}
           </button>
           {errors.confirmPassword && (
-            <p className="text-red-500 text-xs mt-1">
+            <p className="text-orange-700 -500 text-xs mt-1">
               {errors.confirmPassword}
             </p>
           )}
         </div>
         <button
           onClick={handleSignUp}
-          className="px-2 py-2 bg-[#FBBC05] rounded-lg shadow-lg hover:bg-[#FBBC05] transition duration-300 mb-4 text-md"
+          className=" font-bold px-12 py-3 bg-[#FBBC05] rounded-lg shadow-lg hover:bg-[#FBBC05] transition duration-300 mb-4 text-md mx-auto block"
         >
           Sign Up
         </button>

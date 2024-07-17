@@ -3,7 +3,7 @@ import linkedinIcon from "../assets/images/Lindin-icon.svg";
 
 function SocialAuthButtons() {
   return (
-    <div className="social-auth-buttons justify-center  items-center flex flex-col gap-2">
+    <div className=" font-sans social-auth-buttons justify-center  items-center flex flex-col gap-2">
       <button
         className=" bg-[#4285F4] text-[#FFFFFF] w-80 py-2 text-xs sm:text-x md:text-base font-medium  flex  gap-2 justify-center items-center rounded-full"
         type="submit"

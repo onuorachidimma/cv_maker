@@ -15,7 +15,7 @@ function Signup() {
   };
 
   return (
-    <div className="flex h-screen">
+    <div className=" font-sans flex h-screen">
       <div className="flex h-full flex-1 flex-col bg-white p-5">
         <div className="h-full flex flex-col">
           <img className="h-24 w-96" src={Logo} alt="Logo" />
