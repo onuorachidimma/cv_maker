@@ -21,7 +21,7 @@ function Signup() {
           <img className="h-24 w-96" src={Logo} alt="Logo" />
           <div className="flex flex-col items-center justify-center h-full">
             <div className="flex flex-col items-center justify-center text-center gap-2">
-              <h1 className="md:text-6xl sm:text-5xl lg:text-7xl font-semibold">
+              <h1 className="md:text-7xl sm:text-7xl lg:text-7xl font-semibold">
                 Land Your Dream Job
               </h1>
               <p className="text-xl md:text-xl">
@@ -38,7 +38,7 @@ function Signup() {
               </p>
               <input
                 placeholder="Email"
-                className="w-full lg:max-w-lg rounded border border-gray-300 py-5 pl-5  pr-11"
+                className=" lg:max-w-lg rounded border border-gray-300 py-5 pl-4 pr-40"
               />
               <button
                 onClick={openModal}

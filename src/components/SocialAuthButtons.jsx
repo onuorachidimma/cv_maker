@@ -15,13 +15,13 @@ function SocialAuthButtons() {
         />
         <p>Continue with Google </p>
       </button>
-      <button className="bg-[#2427AB] text-[#FFFFFF] w-80 py-3 text-xs sm:text-x md:text-base font-medium  flex justify-center rounded-full  gap-2">
+      <button className="bg-[#2427AB] text-[#FFFFFF] w-80 py-3 text-xs sm:text-base md:text-base font-medium  flex justify-center rounded-full  gap-2">
         <img
           className="block w-5 h-5"
           src={linkedinIcon}
           alt="LinkedIn Signup Image"
         />
-        <p>Continue with Google </p>
+        <p className="pt-1 md:pt-0 sm:pt-1">Continue with LinkedIn</p>
       </button>
     </div>
   );

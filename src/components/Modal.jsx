@@ -2,7 +2,6 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Vector_icon from "../assets/images/Vector-icon.svg";
-import Logo from "../assets/images/Logo-whitebg.svg";
 
 function Modal({ closeModal }) {
   const [email, setEmail] = useState("");
