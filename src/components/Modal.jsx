@@ -79,21 +79,21 @@ function Modal({ closeModal }) {
         </button>
         <p className="font-bold text-2xl text-center mt-7 pb-5">Sign Up</p>
         <div className="mb-4">
-          <p className="pb-1">First Name</p>
+          <p className="pb-1 pl-1">First Name</p>
           <input
             placeholder="Type in your firstname"
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
-          <p className="pb-1">Last Name</p>
+          <p className="pb-1 pl-1">Last Name</p>
           <input
             placeholder="Type in your lastname"
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
         <div className="mb-4">
-          <p className="pb-1">Email</p>
+          <p className="pb-1 pl-1">Email</p>
           <input
             type="email"
             placeholder="Email"
@@ -106,7 +106,7 @@ function Modal({ closeModal }) {
           )}
         </div>
         <div className="mb-4 relative">
-          <p className="pb-1">Password</p>
+          <p className="pb-1 pl-1">Password</p>
           <div className="relative flex items-center">
             <input
               type={passwordVisible ? "text" : "password"}
@@ -128,7 +128,7 @@ function Modal({ closeModal }) {
           )}
         </div>
         <div className="mb-6 relative">
-          <p className="pb-1">Confirm Password</p>
+          <p className="pb-1 pl-1">Confirm Password</p>
           <div className="relative flex items-center">
             <input
               type={confirmPasswordVisible ? "text" : "password"}
@@ -153,7 +153,7 @@ function Modal({ closeModal }) {
         </div>
         <button
           onClick={handleSignUp}
-          className=" rounded-xl font-bold px-24 py-3 bg-[#FBBC05] shadow-lg hover:bg-[#FBBC05] transition duration-300 text-md mx-auto block sm:w-auto sm:px-7 sm:py-2"
+          className="w-80 rounded-3xl sm:w-auto sm:rounded-xl font-bold py-2 bg-[#FBBC05] shadow-lg hover:bg-[#FBBC05] transition duration-300 text-md mx-auto block sm:px-11 sm:py-2"
         >
           Sign Up
         </button>
