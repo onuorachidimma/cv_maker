@@ -49,7 +49,7 @@ const LoginPage = () => {
             </button>
             <p className="text-customTextGray text-center my-5">Or</p>
             <button
-              className="block text-xs sm:text-x md:text-base font-medium w-full flex justify-center items-center rounded-50px bg-customLightBlue  mb-3 py-2"
+              className="text-xs sm:text-x md:text-base font-medium w-full flex justify-center items-center rounded-50px bg-customLightBlue  mb-3 py-2"
               type="submit"
             >
               <img
@@ -61,7 +61,7 @@ const LoginPage = () => {
             </button>
 
             <button
-              className=" block text-xs sm:text-x md:text-base  font-medium bg-customBlue w-full flex justify-center items-center mb-5 text-white rounded-50px py-2"
+              className=" text-xs sm:text-x md:text-base  font-medium bg-customBlue w-full flex justify-center items-center mb-5 text-white rounded-50px py-2"
               type="submit"
             >
               <img
