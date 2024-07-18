@@ -38,7 +38,7 @@ function Signup() {
               </p>
               <input
                 placeholder="Email"
-                className="w-full lg:max-w-lg rounded border border-gray-300 py-5 pl-5 pr-10"
+                className="w-full lg:max-w-lg rounded border border-gray-300 py-5 pl-5  pr-11"
               />
               <button
                 onClick={openModal}
