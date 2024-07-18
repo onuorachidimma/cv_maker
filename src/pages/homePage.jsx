@@ -1,15 +1,19 @@
+import Hero from '../layouts/Hero'
+import HomepageNavbar from '../layouts/HomepageNavbar'
 import React from 'react';
-import HomepageBody2 from '../layouts/HomepageBody2';
-
+import HomepageBody2 from '../layouts/homepageBody2/HomepageBody2';
+import HomepageBody1 from '../layouts/homepageBody1/homepageBody1';
+import CvTemplate from '../layouts/homepageBody2/cvTemplate';
 
 const HomePage = () => {
     return(
         <>
-            <div className="flex items-center justify-center min-h-screen">
-                <p className="text-3xl font-bold underline">I am the Home page,Welcome to Elevate Cv</p>
-            </div>
-         
-            <HomepageBody2/>
+            <HomepageNavbar />
+            <Hero />
+            <CvTemplate/>
+            <HomepageBody1 />
+            {/* <HomepageBody2/> */}
+            
         </>
 
     )

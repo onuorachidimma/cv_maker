@@ -5,9 +5,10 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
+        squarePeg: ['"Square Peg"', 'cursive'],
       },
       colors: {
-        purple: '#005148',
+        customDarkGreen: '#005148',
         customLight: '#9C9C9C',
         customDeepGreen: '#07512B',
         customTextGray: '#D5CFCF',
@@ -15,6 +16,9 @@ export default {
         customLightBlue: '#4285F4',
         customYellow: '#FBBC05',
         customYellowB: '#D3A10F',
+        customBrightYellow: '#FBBC05',
+        customLightGreen: '#77CBA22E',
+        customGreen: '#77CBA2',
       },
       width: {
         '1/5': '20%',
@@ -24,7 +28,18 @@ export default {
         '1700px': '1700px',
       },
       borderRadius: {
-        '50px': '50px',
+        '50px': '50px', // custom 50px border radius
+        '35px': '35px',  // custom 35% border radius
+        'tl-45px': '45px 0 0 0', // top-left corner
+      },
+      fontSize: {
+        '150px': '150px',
+      },
+      lineHeight: {
+        '156px': '156px',
+      },
+      height: {
+        '696px': '696px',
       },
     },
   },

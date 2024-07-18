@@ -41,15 +41,18 @@ const LoginPage = () => {
           </div>
 
           <div>
+            {/* ############# Sign in button ########################## */}
             <button
-              className="text-white text-xs sm:text-x md:text-base font-medium block w-full w-full bg-purple rounded-50px py-4"
+              className="w-full mx-auto lg:w-10/12 lg:mx-auto bg-customDarkGreen text-white text-xs sm:text-x md:text-base font-medium block w-full w-full bg-purple rounded-50px py-4"
               type="submit"
             >
               Sign In
             </button>
             <p className="text-customTextGray text-center my-5">Or</p>
+
+            {/* ############# Sign in with Google button ########################## */}
             <button
-              className="block text-xs sm:text-x md:text-base font-medium w-full flex justify-center items-center rounded-50px bg-customLightBlue  mb-3 py-2"
+              className="w-full lg:w-10/12 lg:mx-auto block text-xs sm:text-x md:text-base font-medium w-full flex justify-center items-center rounded-50px bg-customLightBlue  mb-3 py-2"
               type="submit"
             >
               <img
@@ -60,8 +63,9 @@ const LoginPage = () => {
               Continue with Google
             </button>
 
+            {/* ############# Sign in with LinkedIn button ########################## */}
             <button
-              className=" block text-xs sm:text-x md:text-base  font-medium bg-customBlue w-full flex justify-center items-center mb-5 text-white rounded-50px py-2"
+              className="w-full lg:w-10/12 lg:mx-auto block text-xs sm:text-x md:text-base  font-medium bg-customBlue w-full flex justify-center items-center mb-5 text-white rounded-50px py-2"
               type="submit"
             >
               <img
@@ -74,7 +78,7 @@ const LoginPage = () => {
             <p className="text-center flex justify-between text-xs sm:text-x lg:text-base font-medium text-customDeepGreen">
               Not a member yet?
               <Link
-                to="#"
+                to="/signup"
                 className="text-customDeepGreen underline text-xs sm:text-x lg:text-base font-medium"
               >
                 {" "}
@@ -85,7 +89,7 @@ const LoginPage = () => {
         </div>
       </div>
 
-      <div className="hidden md:block md:w-6/12 lg:w-1/3 bg-purple text-white relative">
+      <div className="hidden md:block md:w-6/12 lg:w-1/3 bg-customDarkGreen text-white relative">
         <div className="w-8/12 mx-auto mt-14 relative">
           <img className="w-full" src={loginPicture} alt="reviewer Picture" />
           <img className="absolute bottom-0 left-0" src={yellowAngle} alt="" />
