@@ -3,8 +3,7 @@ import PropTypes from "prop-types";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Vector_icon from "../assets/images/Vector-icon.svg";
 
-function Modal({ closeModal }) {
-  const [email, setEmail] = useState("");
+function Modal({ email, closeModal }) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -79,26 +78,12 @@ function Modal({ closeModal }) {
         </button>
         <p className="font-bold text-2xl text-center mt-7 pb-5">Sign Up</p>
         <div className="mb-4">
-          <p className="pb-1 pl-1">First Name</p>
-          <input
-            placeholder="Type in your firstname"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <div className="mb-4">
-          <p className="pb-1 pl-1">Last Name</p>
-          <input
-            placeholder="Type in your lastname"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </div>
-        <div className="mb-4">
           <p className="pb-1 pl-1">Email</p>
           <input
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={email} // Display the email prop
+            readOnly
             className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
           {errors.email && (
@@ -163,6 +148,7 @@ function Modal({ closeModal }) {
 }
 
 Modal.propTypes = {
+  email: PropTypes.string.isRequired,
   closeModal: PropTypes.func.isRequired,
 };
 

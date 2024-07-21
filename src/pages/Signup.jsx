@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [email, setEmail] = useState(""); // Add state for email
   const navigate = useNavigate();
 
   // Arrow function to open the modal
@@ -20,7 +21,7 @@ const Signup = () => {
 
   // Arrow function for navigation
   const handleLoginClick = () => {
-    navigate("/login");
+    navigate("/loginPage");
   };
 
   return (
@@ -55,6 +56,8 @@ const Signup = () => {
               </p>
               <input
                 placeholder="Email"
+                value={email} // Bind email state to the input
+                onChange={(e) => setEmail(e.target.value)} // Handle input change
                 className="lg:max-w-lg rounded border border-gray-300 py-5 pl-4 pr-48"
               />
               <button
@@ -76,10 +79,9 @@ const Signup = () => {
           </p>
         </div>
       </div>
-
       <div className="hidden lg:block lg:w-[10%] md:bg-[#005148] lg:bg-[#005148]" />
-
-      {isModalOpen && <Modal closeModal={closeModal} />}
+      {isModalOpen && <Modal email={email} closeModal={closeModal} />}{" "}
+      {/* Pass email to Modal */}
     </div>
   );
 };
