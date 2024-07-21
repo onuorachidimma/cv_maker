@@ -5,26 +5,53 @@ import manWithFiles from "../../assets/images/manWithPapers.svg";
 import TestimonialCard from "../cards/testimonialCard";
 import { Link } from "react-router-dom";
 import cvRAnkerImage from "../../assets/images/cvRankerImage.svg";
+import { useEffect, useState } from "react";
 const HomepageBody1 = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = 100;
+    const duration = 10; // seconds
+    const intervalTime = (duration * 500) / end;
+
+    const interval = setInterval(() => {
+      start += 1;
+      setCount(start);
+      if (start === end) clearInterval(interval);
+    }, intervalTime);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="mb-32  ">
       {/* ############## CV Ranker section ####################### */}
 
       <div className="w-10/12 mx-auto mb-28">
-        <div className="flex justify-center"> 
+        <div className="flex justify-center">
           <SectionHeading heading="Explore other amazing features" />
         </div>
-        <div className="flex flex-wrap  justify-between gap-2">
-          <div className="bg-customDarkGreen w-full md:w-[60%] py-20 pl-24 pr-32 rounded-tlbr-44px ">
-            <h3 className="font-bold text-white text-6xl leading-70px  mb-8">Rank your CV to check eligibility for the role</h3>
-            <SignupFreeButton prompt="Let ‘s get started" link="rankCv/"/>
+        <div className="flex flex-wrap justify-between gap-8 md:gap-2">
+          <div className="bg-customDarkGreen w-full md:w-[60%] py-8 lg:py-20 px-14 lg:pl-24 lg:pr-32 rounded-tlbr-44px">
+            <h3 className="font-bold text-white text-3xl lg:text-6xl leading-8 lg:leading-70px  mb-8">
+              Rank your CV to check eligibility for the role
+            </h3>
+            <SignupFreeButton prompt="Let ‘s get started" link="rankCv/" />
           </div>
 
-          <div className="w-full md:w-[38%] rounded-tlbr-44px">
-            <div className="bg-customLightSeaGreen py-4 pl-8 rounded-tl-44px">
-              <img src={cvRAnkerImage} alt="CV Ranker IMAGE" className="w-[80%]"/>
+          <div className="w-full md:w-[38%] rounded-tlbr-44px flex items-center justify-center">
+            <div className="w-full">
+              <div className="bg-customLightSeaGreen py-4 pl-8 rounded-tl-44px">
+                <img
+                  src={cvRAnkerImage}
+                  alt="CV Ranker IMAGE"
+                  className="w-[80%]"
+                />
+              </div>
+              <p className="bg-customSeaGreen p-4 lg:p-6 rounded-br-44px font-bold text-customDarkGreen text-3xl md:text-2xl lg:text-3xl text-center">
+                The Cv match is <span className="text-4xl">{count}</span>%{" "}
+              </p>
             </div>
-            <p className="bg-customSeaGreen p-6 rounded-br-44px font-bold text-customDarkGreen text-3xl text-center">The Cv match is 45% </p>
           </div>
         </div>
       </div>
@@ -43,7 +70,10 @@ const HomepageBody1 = () => {
             headingText="Step into a world where your professional journey is beautifully showcased and your future possibilities are endless. Our platform empowers you to create a captivating online CV that highlights your achievements, skills, and unique personality. "
           />
           <div className="pt-5 mb-4 md:mb-10">
-            <SignupFreeButton prompt="Sign Up - It’s completely free" link="signup/" />
+            <SignupFreeButton
+              prompt="Sign Up - It’s completely free"
+              link="signup/"
+            />
           </div>
         </div>
 
@@ -56,8 +86,6 @@ const HomepageBody1 = () => {
           />
         </div>
       </div>
-
-      
 
       <div className="bg-customBrightYellow flex flex-wrap gap-8 md:gap-0 justify-center items-center px-14  lg:px-36 py-24 my-24">
         <div className="w-full md:w-6/12 lg:w-5/12">
@@ -94,7 +122,7 @@ const HomepageBody1 = () => {
             headingText="Step into a world where your professional journey is beautifully showcased and your future possibilities are endless. Our platform empowers you to create a captivating online CV that highlights your achievements, skills, and unique personality.  "
           />
         </div>
-        
+
         <div className=" flex  md:items-center lg:items-right leading-156px w-full md:w-4/12 lg:w-6/12">
           <h3 className="font-squarePeg text-8xl lg:text-150px">
             Countless Possibilities
