@@ -138,7 +138,7 @@ function Modal({ email, closeModal }) {
         </div>
         <button
           onClick={handleSignUp}
-          className="w-80 rounded-3xl sm:w-auto sm:rounded-xl font-bold py-2 bg-[#FBBC05] shadow-lg hover:bg-[#FBBC05] transition duration-300 text-md mx-auto block sm:px-11 sm:py-2"
+          className="w-80 rounded-3xl sm:w-auto sm:rounded-xl font-bold py-2 bg-customYellow shadow-lg hover:bg-customYellow transition duration-300 text-md mx-auto block sm:px-11 sm:py-2"
         >
           Sign Up
         </button>

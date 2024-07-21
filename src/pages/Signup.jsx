@@ -51,7 +51,7 @@ const Signup = () => {
             </div>
 
             <div className="flex flex-col items-center justify-center">
-              <p className="mb-5 text-lg text-[#9C9C9C]">
+              <p className="mb-5 text-lg  border-customLight">
                 Or sign up with your Email
               </p>
               <input
@@ -62,7 +62,7 @@ const Signup = () => {
               />
               <button
                 onClick={openModal}
-                className="mt-6 rounded-3xl bg-[#FBBC05] px-3 py-2.5 text-sm font-semibold"
+                className="mt-6 rounded-3xl bg-customYellow px-3 py-2.5 text-sm font-semibold"
               >
                 Sign Up - It's Completely Free
               </button>
@@ -71,7 +71,7 @@ const Signup = () => {
         </div>
 
         <div className="flex items-center justify-center mt-5">
-          <p className="text-xs md:text-sm text-[#9C9C9C] text-center">
+          <p className="text-xs md:text-sm  border-customLight text-center">
             By signing up, I agree to the
             <span className="text-[#005148]"> Terms of Use </span>
             and
@@ -79,7 +79,7 @@ const Signup = () => {
           </p>
         </div>
       </div>
-      <div className="hidden lg:block lg:w-[10%] md:bg-[#005148] lg:bg-[#005148]" />
+      <div className="hidden lg:block lg:w-[10%] md:bg-customDarkGreen lg:bg-customDarkGreen" />
       {isModalOpen && <Modal email={email} closeModal={closeModal} />}{" "}
       {/* Pass email to Modal */}
     </div>
