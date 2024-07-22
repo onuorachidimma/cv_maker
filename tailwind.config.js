@@ -23,6 +23,11 @@ export default {
       width: {
         '1/5': '20%',
         '3/10': '30%',
+        '337px': '337px',
+        '297px': '297px',
+        '986px': '986px',
+        '840px' : '840px',
+        '134px' : '134px',
       },
       maxWidth: {
         '1700px': '1700px',
@@ -40,6 +45,7 @@ export default {
       },
       height: {
         '696px': '696px',
+        '61px' : '61px'
       },
     },
   },
