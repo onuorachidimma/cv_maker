@@ -1,36 +1,39 @@
 // Footer.js
 import React from 'react';
-import styles from './footer.module.css';
+import instagramIcon from "../../assets/images/instagramIcon.svg"; 
+import twitterIcon from "../../assets/images/twitterIcon.svg";
+import facebookIcon from "../../assets/images/facebookIcon.svg";
+import linkedinIcon from "../../assets/images/linkedinIcon.svg";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.row}>
-          <div className={styles.col}>
+    <footer className="bg-teal-800 text-white py-6">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="flex flex-wrap justify-between">
+          <div className="mr-4 w-full md:w-1/4 mb-4 md:mb-0">
             <p>Commodo varius tellus tempor urna montes dui donec ornare id. Lectus ut felis dui viverra et sit morbi.</p>
           </div>
-          <div className={styles.col}>
-            <h4 className={styles.heading}>Products</h4>
-            <ul className={styles.list}>
+          <div className="w-full md:w-1/4 mb-4 md:mb-0">
+            <h4 className="font-semibold mb-2">Products</h4>
+            <ul>
               <li>Endorsements</li>
               <li>Partnerships</li>
               <li>Testimonials</li>
               <li>Terms of Service</li>
             </ul>
           </div>
-          <div className={styles.col}>
-            <h4 className={styles.heading}>Resources</h4>
-            <ul className={styles.list}>
+          <div className="w-full md:w-1/4 mb-4 md:mb-0">
+            <h4 className="font-semibold mb-2">Resources</h4>
+            <ul>
               <li>Terms & Condition</li>
               <li>Account</li>
               <li>Privacy</li>
               <li>Customer Service</li>
             </ul>
           </div>
-          <div className={styles.col}>
-            <h4 className={styles.heading}>Terms</h4>
-            <ul className={styles.list}>
+          <div className="w-full md:w-1/4 mb-4 md:mb-0">
+            <h4 className="font-semibold mb-2">Terms</h4>
+            <ul>
               <li>Guidelines</li>
               <li>Contact Us</li>
               <li>Youtube</li>
@@ -38,26 +41,30 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className={styles.bottom}>
-          <p className={styles.copyright}>© 2024 ElevateCV All rights reserved.</p>
-          <div className={styles.social}>
-            <a href="#" className={styles.socialLink}>
-              <i className="fas fa-instagram"></i>
+        <div className="mt-6 flex flex-wrap justify-between items-center border-t border-teal-700 pt-4">
+          <p className="text-sm">© 2024 ElevateCV All rights reserved.</p>
+          <div className="flex space-x-4">
+            <a href="#" className="text-white hover:text-gray-300">
+              <i className="fab fa-instagram"></i>
+              <img src="instagramIcon" alt="" />
             </a>
-            <a href="#" className={styles.socialLink}>
-              <i className="fas fa-xing"></i>
+            <a href="#" className="text-white hover:text-gray-300">
+              <i className="fab fa-xing"></i>
+              <img src="twitterIcon" alt="" />
             </a>
-            <a href="#" className={styles.socialLink}>
-              <i className="fas fa-facebook"></i>
+            <a href="#" className="text-white hover:text-gray-300">
+              <i className="fab fa-facebook"></i>
+              <img src="facebookIcon" alt="" />
             </a>
-            <a href="#" className={styles.socialLink}>
-              <i className="fas fa-linkedin"></i>
+            <a href="#" className="text-white hover:text-gray-300">
+              <i className="fab fa-linkedin"></i>
+              <img src="linkedinIcon" alt="" />
             </a>
           </div>
         </div>
       </div>
-    </footer>
-  );
-};
+      </footer>
+  )
+}
 
 export default Footer;
