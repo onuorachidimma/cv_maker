@@ -1,9 +1,9 @@
 // Footer.js
 import React from 'react';
-import instagramIcon from "../../assets/images/instagramIcon.svg"; 
-import twitterIcon from "../../assets/images/twitterIcon.svg";
-import facebookIcon from "../../assets/images/facebookIcon.svg";
-import linkedinIcon from "../../assets/images/linkedinIcon.svg";
+import InstagramIcon from "../../assets/images/instagramIcon.svg"; 
+import TwitterIcon from "../../assets/images/twitterIcon.svg";
+import FacebookIcon from "../../assets/images/facebookIcon.svg";
+import LinkedinIcon from "../../assets/images/linkedinIcon.svg";
 
 const Footer = () => {
   return (
