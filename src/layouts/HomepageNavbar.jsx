@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from '../assets/images/Logo-whitebg.svg'
+import { Link } from 'react-router-dom'
 
 function HomepageNavbar() {
   return (
@@ -17,8 +18,8 @@ function HomepageNavbar() {
                 </ul> */}
             </div>
             <div className=" mt-5 text-lg items-center ">
-                <button className="bg-customGreen py-2.5 px-5 rounded-lg mr-2">Login</button>
-                <button className="border border-customGreen py-2.5 px-5 rounded-lg mr-6">Sign up</button>
+                <button className="bg-customGreen py-2.5 px-5 rounded-lg mr-2"><Link to="/login">Login</Link></button>
+                <button className="border border-customGreen py-2.5 px-5 rounded-lg mr-6"><Link to="/signup">Sign up</Link></button>
             </div>
         </div>
     </>

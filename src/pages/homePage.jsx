@@ -11,6 +11,7 @@ const HomePage = () => {
         <>
             <HomepageNavbar />
             <Hero />
+            <CvTemplate/>
             <HomepageBody1 />
             <HomepageBody2/>
             <CvTemplate/>
