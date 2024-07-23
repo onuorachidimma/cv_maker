@@ -2,7 +2,7 @@ import SectionHeading from "./sectionHeading";
 import SignupFreeButton from "../buttons/signupFreeBtn";
 import coverLetterSample1 from "../../assets/images/coverLetterSample1.svg";
 import manWithFiles from "../../assets/images/manWithPapers.svg";
-import TestimonialCard from "../cards/testimonialCard";
+import TestimonialCard from "../cards/testimonialCard.jsx";
 import { Link } from "react-router-dom";
 const HomepageBody1 = () => {
   return (
