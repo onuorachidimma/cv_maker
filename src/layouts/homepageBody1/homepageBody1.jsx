@@ -4,9 +4,58 @@ import coverLetterSample1 from "../../assets/images/coverLetterSample1.svg";
 import manWithFiles from "../../assets/images/manWithPapers.svg";
 import TestimonialCard from "../cards/testimonialCard";
 import { Link } from "react-router-dom";
+import cvRAnkerImage from "../../assets/images/cvRankerImage.svg";
+import { useEffect, useState } from "react";
 const HomepageBody1 = () => {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const end = 100;
+    const duration = 10; // seconds
+    const intervalTime = (duration * 500) / end;
+
+    const interval = setInterval(() => {
+      start += 1;
+      setCount(start);
+      if (start === end) clearInterval(interval);
+    }, intervalTime);
+
+    return () => clearInterval(interval);
+  }, []);
   return (
     <div className="mb-32  ">
+      {/* ############## CV Ranker section ####################### */}
+
+      <div className="w-10/12 mx-auto mb-28">
+        <div className="flex justify-center">
+          <SectionHeading heading="Explore other amazing features" />
+        </div>
+        <div className="flex flex-wrap justify-between gap-8 md:gap-2">
+          <div className="bg-customDarkGreen w-full md:w-[60%] py-8 lg:py-20 px-14 lg:pl-24 lg:pr-32 rounded-tlbr-44px">
+            <h3 className="font-bold text-white text-3xl lg:text-6xl leading-8 lg:leading-70px  mb-8">
+              Rank your CV to check eligibility for the role
+            </h3>
+            <SignupFreeButton prompt="Let ‘s get started" link="rankCv/" />
+          </div>
+
+          <div className="w-full md:w-[38%] rounded-tlbr-44px flex items-center justify-center">
+            <div className="w-full">
+              <div className="bg-customLightSeaGreen py-4 pl-8 rounded-tl-44px">
+                <img
+                  src={cvRAnkerImage}
+                  alt="CV Ranker IMAGE"
+                  className="w-[80%]"
+                />
+              </div>
+              <p className="bg-customSeaGreen p-4 lg:p-6 rounded-br-44px font-bold text-customDarkGreen text-3xl md:text-2xl lg:text-3xl text-center">
+                The Cv match is <span className="text-4xl">{count}</span>%{" "}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* ############## Homepage Cover Letter section ####################### */}
       <div className="flex flex-wrap justify-between items-center  md:mb-8 lg:mb-16 w-10/12 mx-auto lg:w-full lg:pl-36  md:mt-5 ">
         <div className="w-full sm:w-full md:w-5/12 lg:w-4/12 md:pr-5 lg:pr-0">
@@ -21,7 +70,10 @@ const HomepageBody1 = () => {
             headingText="Step into a world where your professional journey is beautifully showcased and your future possibilities are endless. Our platform empowers you to create a captivating online CV that highlights your achievements, skills, and unique personality. "
           />
           <div className="pt-5 mb-4 md:mb-10">
-            <SignupFreeButton />
+            <SignupFreeButton
+              prompt="Sign Up - It’s completely free"
+              link="signup/"
+            />
           </div>
         </div>
 
@@ -32,6 +84,18 @@ const HomepageBody1 = () => {
             alt=""
             className="z-10 w-full h-696px lg:w-9/12"
           />
+        </div>
+      </div>
+
+      <div className="bg-customBrightYellow flex flex-wrap gap-8 md:gap-0 justify-center items-center px-14  lg:px-36 py-24 my-24">
+        <div className="w-full md:w-6/12 lg:w-5/12">
+          <img src={manWithFiles} alt="" className="w-full" />
+        </div>
+
+        <div className="bg-customYellowB flex  items-center px-10  md:px-8 lg:px-36 py-12 md:py-14 w-full md:w-6/12 w-8/12 h-44 lg:h-40">
+          <h3 className="text-4xl  font-bold ">
+            Features Tailored for Your Success
+          </h3>
         </div>
       </div>
 
@@ -48,18 +112,6 @@ const HomepageBody1 = () => {
 
         <div>
           <TestimonialCard />
-        </div>
-      </div>
-
-      <div className="bg-customBrightYellow flex flex-wrap gap-8 md:gap-0 justify-center items-center px-14  lg:px-36 py-24 my-24">
-        <div className="w-full md:w-6/12 lg:w-5/12">
-          <img src={manWithFiles} alt="" className="w-full" />
-        </div>
-
-        <div className="bg-customYellowB flex  items-center px-10  md:px-8 lg:px-36 py-12 md:py-14 w-full md:w-6/12 w-8/12 h-44 lg:h-40">
-          <h3 className="text-4xl  font-bold ">
-            Features Tailored for Your Success
-          </h3>
         </div>
       </div>
 
