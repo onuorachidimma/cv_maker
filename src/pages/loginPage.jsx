@@ -1,10 +1,24 @@
-import logo from "../assets/images/Logo-whitebg.svg";
+import { useFormik } from "formik";
 import { Link } from "react-router-dom";
+import loginValidationSchema from "../components/validators/loginValidationSchema";
+import logo from "../assets/images/Logo-whitebg.svg";
 import linkedInSigninImg from "../assets/images/social_linkedin-with-circle.svg";
 import googleIcon from "../assets/images/google.svg";
 import loginPicture from "../assets/images/LoginPage-picture.svg";
 import yellowAngle from "../assets/images/YellowVector 1.svg";
-const LoginPage = () => {
+
+const loginPage = () => {
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema: loginValidationSchema,
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+
   return (
     <div className="flex flex-wrap font-sans h-screen lg:max-w-1700px lg:mx-auto">
       <div className="w-full md:w-6/12 lg:w-2/3 bg-white text-black">
@@ -13,75 +27,105 @@ const LoginPage = () => {
         </div>
 
         <div className="w-10/12 md:w-10/12 lg:w-6/12 mx-auto">
-          <h3 className="text-2xl md:text-3xl lg:text-4xl  font-bold mb-8 text-center">
+          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 text-center">
             Login
           </h3>
 
-          <div className="mb-8">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              className="w-full border border-customLight block rounded-md mb-8 py-3 indent-2 sm:indent-3 md:indent-6 text-xs sm:text-x md:text-xl"
-            />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              className="w-full border border-customLight block rounded-md mb-2.5 py-3 indent-2 sm:indent-3 md:indent-6 text-xs sm:text-x md:text-xl"
-            />
-            <Link
-              to="#"
-              className="text-center block text-customDeepGreen underline text-xs sm:text-x md:text-base  font-medium"
-            >
-              Forgot Password?
-            </Link>
-          </div>
-
-          <div>
-            <button
-              className="text-white text-xs sm:text-x md:text-base font-medium block w-full w-full bg-purple rounded-50px py-4"
-              type="submit"
-            >
-              Sign In
-            </button>
-            <p className="text-customTextGray text-center my-5">Or</p>
-            <button
-              className="text-xs sm:text-x md:text-base font-medium w-full flex justify-center items-center rounded-50px bg-customLightBlue  mb-3 py-2"
-              type="submit"
-            >
-              <img
-                className="block pr-2"
-                src={googleIcon}
-                alt="Google Signin Image"
+          <form onSubmit={formik.handleSubmit} className="mb-8">
+            <div className="mb-8">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                className={`w-full border ${
+                  formik.touched.email && formik.errors.email
+                    ? "border-red-500"
+                    : "border-customLight"
+                } block rounded-md mb-2.5 py-3 indent-2 sm:indent-3 md:indent-6 text-xs sm:text-x md:text-xl`}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
               />
-              Continue with Google
-            </button>
+              {formik.touched.email && formik.errors.email ? (
+                <div className="text-red-500 text-xs">
+                  {formik.errors.email}
+                </div>
+              ) : null}
 
-            <button
-              className=" text-xs sm:text-x md:text-base  font-medium bg-customBlue w-full flex justify-center items-center mb-5 text-white rounded-50px py-2"
-              type="submit"
-            >
-              <img
-                className="block pr-2"
-                src={linkedInSigninImg}
-                alt="LinkedIn Signin Image"
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                className={`w-full border ${
+                  formik.touched.password && formik.errors.password
+                    ? "border-red-500"
+                    : "border-customLight"
+                } block rounded-md mb-2.5 py-3 indent-2 sm:indent-3 md:indent-6 text-xs sm:text-x md:text-xl`}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.password}
               />
-              Continue with LinkedIn
-            </button>
-            <p className="text-center flex justify-between text-xs sm:text-x lg:text-base font-medium text-customDeepGreen">
-              Not a member yet?
+              {formik.touched.password && formik.errors.password ? (
+                <div className="text-red-500 text-xs">
+                  {formik.errors.password}
+                </div>
+              ) : null}
+
               <Link
                 to="#"
-                className="text-customDeepGreen underline text-xs sm:text-x lg:text-base font-medium"
+                className="text-center block text-customDeepGreen underline text-xs sm:text-x md:text-base font-medium"
               >
-                {" "}
-                Create an Account
+                Forgot Password?
               </Link>
-            </p>
-          </div>
+            </div>
+
+            <div>
+              <button
+                className="text-white text-xs sm:text-x md:text-base font-medium block w-full bg-purple rounded-50px py-4"
+                type="submit"
+              >
+                Sign In
+              </button>
+            </div>
+          </form>
+
+          <p className="text-customTextGray text-center my-5">Or</p>
+          <button
+            className="text-xs sm:text-x md:text-base font-medium w-full flex justify-center items-center rounded-50px bg-customLightBlue mb-3 py-2"
+            type="button"
+          >
+            <img
+              className="block pr-2"
+              src={googleIcon}
+              alt="Google Signin Image"
+            />
+            Continue with Google
+          </button>
+
+          <button
+            className="text-xs sm:text-x md:text-base font-medium bg-customBlue w-full flex justify-center items-center mb-5 text-white rounded-50px py-2"
+            type="button"
+          >
+            <img
+              className="block pr-2"
+              src={linkedInSigninImg}
+              alt="LinkedIn Signin Image"
+            />
+            Continue with LinkedIn
+          </button>
+
+          <p className="text-center flex justify-between text-xs sm:text-x lg:text-base font-medium text-customDeepGreen">
+            Not a member yet?
+            <Link
+              to="#"
+              className="text-customDeepGreen underline text-xs sm:text-x lg:text-base font-medium"
+            >
+              {" "}
+              Create an Account
+            </Link>
+          </p>
         </div>
       </div>
 
@@ -104,4 +148,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default loginPage;

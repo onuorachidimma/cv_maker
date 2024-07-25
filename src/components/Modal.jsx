@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import PropTypes from "prop-types";
@@ -11,15 +11,11 @@ const Modal = ({ email, closeModal }) => {
 
   const formik = useFormik({
     initialValues: {
-      firstName: "",
-      lastName: "",
       email: email, // Use the email passed from Signup
       password: "",
       confirmPassword: "",
     },
     validationSchema: Yup.object({
-      firstName: Yup.string().required("First Name is required"),
-      lastName: Yup.string().required("Last Name is required"),
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),

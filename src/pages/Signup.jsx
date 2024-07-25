@@ -3,15 +3,29 @@ import Logo from "../assets/images/Logo-whitebg.svg";
 import Socialsbtn from "../components/SocialAuthButtons";
 import Modal from "../components/Modal";
 import { Link } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import signupValidationSchema from "../components/validators/signupValidationSchema";
+
+const validationSchema = Yup.object({
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
+});
 
 const Signup = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [email, setEmail] = useState("");
 
-  // Function to open the modal
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+  // Formik setup
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+    },
+    validationSchema: validationSchema, // Use validationSchema here
+    onSubmit: (values) => {
+      setIsModalOpen(true);
+    },
+  });
 
   // Function to close the modal
   const closeModal = () => {
@@ -48,18 +62,35 @@ const Signup = () => {
               <p className="mb-5 text-lg border-customLight">
                 Or sign up with your Email
               </p>
-              <input
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="rounded border border-gray-300 py-5 pl-4 px-24"
-              />
-              <button
-                onClick={openModal}
-                className="mt-6 rounded-3xl bg-customYellow px-3 py-2.5 text-sm font-semibold"
+              <form
+                onSubmit={formik.handleSubmit}
+                className="flex flex-col items-center"
               >
-                Sign Up - It's Completely Free
-              </button>
+                <input
+                  placeholder="Email"
+                  name="email"
+                  type="email"
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  className={`rounded border ${
+                    formik.touched.email && formik.errors.email
+                      ? "border-red-500"
+                      : "border-gray-300"
+                  } py-5 pl-4 px-24`}
+                />
+                {formik.touched.email && formik.errors.email ? (
+                  <div className="text-red-500 text-xs">
+                    {formik.errors.email}
+                  </div>
+                ) : null}
+                <button
+                  type="submit"
+                  className="mt-6 rounded-3xl bg-customYellow px-3 py-2.5 text-sm font-semibold"
+                >
+                  Sign Up - It's Completely Free
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -67,14 +98,16 @@ const Signup = () => {
         <div className="flex items-center justify-center mt-5">
           <p className="text-xs md:text-sm border-customLight text-center">
             By signing up, I agree to the
-            <span className="customDeepGreen]"> Terms of Use </span>
+            <span className="text-customDeepGreen"> Terms of Use </span>
             and
-            <span className="customDeepGreen"> Privacy Policy</span>.
+            <span className="text-customDeepGreen"> Privacy Policy</span>.
           </p>
         </div>
       </div>
       <div className="hidden lg:block lg:w-[10%] md:bg-customDarkGreen lg:bg-customDarkGreen" />
-      {isModalOpen && <Modal email={email} closeModal={closeModal} />}
+      {isModalOpen && (
+        <Modal email={formik.values.email} closeModal={closeModal} />
+      )}
     </div>
   );
 };
