@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useFormik } from "formik";
-import * as Yup from "yup";
 import PropTypes from "prop-types";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Vector_icon from "../assets/images/Vector-icon.svg";
+import SignupSchema from "../components/validators/SignupSchema";
 
 const Modal = ({ email, closeModal }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -11,21 +11,11 @@ const Modal = ({ email, closeModal }) => {
 
   const formik = useFormik({
     initialValues: {
-      email: email, // Use the email passed from Signup
+      email: email,
       password: "",
       confirmPassword: "",
     },
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .email("Invalid email address")
-        .required("Email is required"),
-      password: Yup.string()
-        .min(8, "Password must be at least 8 characters long")
-        .required("Password is required"),
-      confirmPassword: Yup.string()
-        .oneOf([Yup.ref("password"), null], "Passwords must match")
-        .required("Confirm Password is required"),
-    }),
+    validationSchema: SignupSchema,
     onSubmit: (values) => {
       console.log(values);
       closeModal();
