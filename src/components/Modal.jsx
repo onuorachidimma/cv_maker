@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useFormik } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import PropTypes from "prop-types";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Vector_icon from "../assets/images/Vector-icon.svg";
@@ -8,19 +8,6 @@ import SignupSchema from "../components/validators/SignupSchema";
 const Modal = ({ email, closeModal }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
-
-  const formik = useFormik({
-    initialValues: {
-      email: email,
-      password: "",
-      confirmPassword: "",
-    },
-    validationSchema: SignupSchema,
-    onSubmit: (values) => {
-      console.log(values);
-      closeModal();
-    },
-  });
 
   return (
     <div className="text-20px font-sans fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
@@ -33,86 +20,104 @@ const Modal = ({ email, closeModal }) => {
           <img src={Vector_icon} alt="vector-icon" />
         </button>
         <p className="font-bold text-2xl text-center mt-7 pb-5">Sign Up</p>
-        <form onSubmit={formik.handleSubmit}>
-          <div className="mb-4">
-            <p className="pb-1 pl-1">Email</p>
-            <input
-              name="email"
-              type="email"
-              placeholder="Email"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              readOnly
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div className="text-red-500 text-xs mt-1">
-                {formik.errors.email}
+        <Formik
+          initialValues={{
+            email: email,
+            password: "",
+            confirmPassword: "",
+          }}
+          validationSchema={SignupSchema}
+          onSubmit={(values) => {
+            console.log(values);
+            closeModal();
+          }}
+        >
+          {({ touched, errors }) => (
+            <Form>
+              <div className="mb-4">
+                <p className="pb-1 pl-1">Email</p>
+                <Field
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  className={`w-full p-3 border ${
+                    touched.email && errors.email
+                      ? "border-red-500"
+                      : "border-gray-300"
+                  } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  readOnly
+                />
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="text-red-500 text-xs mt-1"
+                />
               </div>
-            ) : null}
-          </div>
-          <div className="mb-4 relative">
-            <p className="pb-1 pl-1">Password</p>
-            <div className="relative flex items-center">
-              <input
-                name="password"
-                type={passwordVisible ? "text" : "password"}
-                placeholder="Password"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.password}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <div className="mb-4 relative">
+                <p className="pb-1 pl-1">Password</p>
+                <div className="relative flex items-center">
+                  <Field
+                    name="password"
+                    type={passwordVisible ? "text" : "password"}
+                    placeholder="Password"
+                    className={`w-full p-3 border ${
+                      touched.password && errors.password
+                        ? "border-red-500"
+                        : "border-gray-300"
+                    } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setPasswordVisible(!passwordVisible)}
+                    className="absolute right-0 pr-3 text-gray-600"
+                  >
+                    {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="text-red-500 text-xs mt-1"
+                />
+              </div>
+              <div className="mb-6 relative">
+                <p className="pb-1 pl-1">Confirm Password</p>
+                <div className="relative flex items-center">
+                  <Field
+                    name="confirmPassword"
+                    type={confirmPasswordVisible ? "text" : "password"}
+                    placeholder="Confirm Password"
+                    className={`w-full p-3 border ${
+                      touched.confirmPassword && errors.confirmPassword
+                        ? "border-red-500"
+                        : "border-gray-300"
+                    } rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  />
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setConfirmPasswordVisible(!confirmPasswordVisible)
+                    }
+                    className="absolute right-0 pr-3 text-gray-600"
+                  >
+                    {confirmPasswordVisible ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
+                <ErrorMessage
+                  name="confirmPassword"
+                  component="div"
+                  className="text-red-500 text-xs mt-1"
+                />
+              </div>
               <button
-                type="button"
-                onClick={() => setPasswordVisible(!passwordVisible)}
-                className="absolute right-0 pr-3 text-gray-600"
+                type="submit"
+                className="px-8 font-bold block py-2 mx-auto bg-customYellow rounded-xl hover:bg-yellow-300 transition duration-200"
               >
-                {passwordVisible ? <FaEyeSlash /> : <FaEye />}
+                Sign up
               </button>
-            </div>
-            {formik.touched.password && formik.errors.password ? (
-              <div className="text-red-500 text-xs mt-1">
-                {formik.errors.password}
-              </div>
-            ) : null}
-          </div>
-          <div className="mb-6 relative">
-            <p className="pb-1 pl-1">Confirm Password</p>
-            <div className="relative flex items-center">
-              <input
-                name="confirmPassword"
-                type={confirmPasswordVisible ? "text" : "password"}
-                placeholder="Confirm Password"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.confirmPassword}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button
-                type="button"
-                onClick={() =>
-                  setConfirmPasswordVisible(!confirmPasswordVisible)
-                }
-                className="absolute right-0 pr-3 text-gray-600"
-              >
-                {confirmPasswordVisible ? <FaEyeSlash /> : <FaEye />}
-              </button>
-            </div>
-            {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-              <div className="text-red-500 text-xs mt-1">
-                {formik.errors.confirmPassword}
-              </div>
-            ) : null}
-          </div>
-          <button
-            type="submit"
-            className="px-8 font-bold block py-2 mx-auto bg-customYellow rounded-xl hover:bg-yellow-300 transition duration-200"
-          >
-            Sign up
-          </button>
-        </form>
+            </Form>
+          )}
+        </Formik>
       </div>
     </div>
   );
