@@ -19,6 +19,8 @@ export default {
         customBrightYellow: '#FBBC05',
         customLightGreen: '#77CBA22E',
         customGreen: '#77CBA2',
+        customLightSeaGreen: '#E4F5EC',
+        customSeaGreen: '#77CBA2',
       },
       width: {
         '1/5': '20%',
@@ -36,12 +38,16 @@ export default {
         '50px': '50px', // custom 50px border radius
         '35px': '35px',  // custom 35% border radius
         'tl-45px': '45px 0 0 0', // top-left corner
+        'tlbr-44px': '44px 0 44px 0', // top-left corner
+        'tl-44px': '44px 0 0 0', // top-left corner
+        'br-44px': '0 0 44px 0', // top-left corner
       },
       fontSize: {
         '150px': '150px',
       },
       lineHeight: {
         '156px': '156px',
+        '70px': '70px'
       },
       height: {
         '696px': '696px',
