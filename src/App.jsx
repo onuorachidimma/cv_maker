@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import "./index.css";
 import HomePage from "./pages/homePage";
-import LoginPage from "./pages/LoginPage";
-import Signup from "./pages/Signup";
+import LoginPage from "./pages/loginPage";
+import Signup from "./pages/signup";
 import CVRanker from "./pages/cvRankerPage";
 
 function App() {
