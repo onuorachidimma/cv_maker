@@ -70,7 +70,7 @@ const LoginPage = () => {
                   </div>
 
                   <Link
-                    to="/signup"
+                    to=""
                     className="text-center block text-customDeepGreen underline text-xs sm:text-x md:text-base font-medium"
                   >
                     Forgot Password?
@@ -79,7 +79,7 @@ const LoginPage = () => {
 
                 <div>
                   <button
-                    className="text-white text-xs sm:text-x md:text-base font-medium block w-full bg-purple rounded-50px py-4"
+                    className="text-white text-xs sm:text-x md:text-base font-medium block w-full bg-customDeepGreen rounded-50px py-4"
                     type="submit"
                   >
                     Sign In

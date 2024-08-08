@@ -45,14 +45,14 @@ const Signup = () => {
             </div>
 
             <div className="flex flex-col items-center justify-center">
-              <p className="mb-5 text-lg border-customLight">
+              <p className="my-7 text-base border-customLight text-gray-400">
                 Or sign up with your Email
               </p>
               <input
-                placeholder="Email"
+                placeholder="Type your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="rounded border border-gray-300 py-5 pl-4 px-24"
+                className="rounded border border-gray-300 mt-5 py-5 pl-4 px-24"
               />
               <button
                 onClick={openModal}
@@ -67,9 +67,9 @@ const Signup = () => {
         <div className="flex items-center justify-center mt-5">
           <p className="text-xs md:text-sm border-customLight text-center">
             By signing up, I agree to the
-            <span className="customDeepGreen"> Terms of Use </span>
+            <span className="text-customDeepGreen"> Terms of Use </span>
             and
-            <span className="customDeepGreen"> Privacy Policy</span>.
+            <span className="text-customDeepGreen"> Privacy Policy</span>.
           </p>
         </div>
       </div>
