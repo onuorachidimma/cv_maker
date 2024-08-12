@@ -1,4 +1,4 @@
-import HomepageNavbar from "../layouts/HomepageNavbar"
+import HomepageNavbar from "../layouts/navbar/HomepageNavbar"
 import SectionHeading from "../layouts/homepageBody1/sectionHeading"
 const CVRanker = () => {
     return(

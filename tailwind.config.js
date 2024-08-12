@@ -21,6 +21,7 @@ export default {
         customGreen: '#77CBA2',
         customLightSeaGreen: '#E4F5EC',
         customSeaGreen: '#77CBA2',
+        customLightGray: '#EBEAEA'
       },
       width: {
         '1/5': '20%',
@@ -44,6 +45,7 @@ export default {
       },
       fontSize: {
         '150px': '150px',
+        '54px': '54px'
       },
       lineHeight: {
         '156px': '156px',
