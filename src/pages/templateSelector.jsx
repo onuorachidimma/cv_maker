@@ -76,7 +76,7 @@ function TemplateSelector() {
           </div>
           <Link
             to="/templates"
-            className=" underline underline-offset-2 cursor-pointer text-right"
+            className=" underline underline-offset-2 cursor-pointer text-right pb-9"
           >
             See all templates
           </Link>
@@ -84,7 +84,7 @@ function TemplateSelector() {
 
         <div className="flex justify-end gap-7">
           <p className="text-customLighterGreen py-2 my-5">Skip for now</p>
-          <button className="text-white bg-customDeepGreen text-xl font-light py-3 px-7 my-5">
+          <button className="text-white bg-customDeepGreen font-light py-3 px-8 my-5 text-lg">
             Choose the template
           </button>
         </div>
