@@ -20,8 +20,10 @@ function TemplateSelector() {
 
   // Step 3: Conditionally apply styles
   const getImageClasses = (templateId) => {
-    return `cursor-pointer p-2 ${
-      selectedTemplate === templateId ? "border-4 border-blue-500" : ""
+    return `cursor-pointer p-2 rounded transition-shadow duration-300 ${
+      selectedTemplate === templateId
+        ? "shadow-2xl" // More obvious shadow when selected
+        : "shadow-sm hover:shadow-md" // Subtle shadow by default, with hover effect
     }`;
   };
 
@@ -74,6 +76,7 @@ function TemplateSelector() {
               onClick={() => handleTemplateClick("template5")}
             />
           </div>
+
           <Link
             to="/templates"
             className=" underline underline-offset-2 cursor-pointer text-right pb-9"
@@ -83,8 +86,8 @@ function TemplateSelector() {
         </div>
 
         <div className="flex justify-end gap-7">
-          <p className="text-customLighterGreen py-2 my-5">Skip for now</p>
-          <button className="text-white bg-customDeepGreen font-light py-3 px-8 my-5 text-lg">
+          <p className="text-customLighterGreen py-2 mt-7">Skip for now</p>
+          <button className="text-white bg-customDeepGreen font-light mb-24 py-3 px-8 mt-5 text-lg">
             Choose the template
           </button>
         </div>
