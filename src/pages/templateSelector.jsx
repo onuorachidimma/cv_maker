@@ -22,8 +22,8 @@ function TemplateSelector() {
   const getImageClasses = (templateId) => {
     return `cursor-pointer p-2 rounded transition-shadow duration-300 ${
       selectedTemplate === templateId
-        ? "shadow-2xl" // More obvious shadow when selected
-        : "shadow-sm hover:shadow-md" // Subtle shadow by default, with hover effect
+        ? "shadow-2xl border-4 border-blue-500"
+        : "shadow-sm hover:shadow-lg"
     }`;
   };
 
