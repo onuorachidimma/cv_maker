@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import HomepageNavbar from "../layouts/HomepageNavbar";
 import SectionHeading from "../layouts/homepageBody1/sectionHeading";
+import SignupFreeButton from "../layouts/buttons/signupFreeBtn";
+import checkIcon from "../assets/images/checkIcon.svg";
+import closeIcon from "../assets/images/closeIcon.svg";
 
 const CVRanker = () => {
   const [file, setFile] = useState(null);
@@ -36,7 +39,7 @@ const CVRanker = () => {
           method: "POST",
           headers: {
             Accept: "application/json",
-            "X-AUG-KEY": "pLz5bHhV.0AkYcrfs2zdGSpme841844NtE7cACtac",
+            "X-AUG-KEY": import.meta.env.VITE_AUG_API_KEY,
           },
           body: formData,
         }
@@ -65,9 +68,9 @@ const CVRanker = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <HomepageNavbar />
-      <div className="w-7/12 ml-20">
+      <div className="w-[80%] m-auto lg:w-7/12 lg:ml-20 mb-32">
         <div className="mt-20 w-full">
           <SectionHeading heading="CV Ranker" />
           <label htmlFor="jobDescription" className="font-semibold block">
@@ -126,15 +129,29 @@ const CVRanker = () => {
 
         {showModal && (
           <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-            <div className="bg-white p-8 rounded shadow-lg w-6/12 text-center">
-              <h2 className="text-2xl font-bold mb-4">CV Rank</h2>
-              <p>Your CV rank is: {rank}</p>
-              <button
+            <div className="bg-white p-8 md:p-16 lg:p-20 rounded shadow-lg w-9/12 md:w-6/12 lg:w-5/12 text-center relative">
+              <div
                 onClick={closeModal}
-                className="mt-4 bg-blue-500 text-white py-2 px-4 rounded"
+                className="absolute top-0 right-0 m-4 lg:m-8 h-5 w-5 cursor-pointer"
               >
-                Close
-              </button>
+                <img
+                  src={closeIcon}
+                  className="w-[100%] h-[100%]"
+                  alt="close icon"
+                />
+              </div>
+              <div className="flex justify-center mb-12 mt-8">
+                <img className="h-28 w-28" src={checkIcon} alt="" />
+              </div>
+              <p className="text-xl sm:text-2xl md:text-4xl font-bold mb-8 text-customDarkGreen">
+                The CV match is <br />{" "}
+                <span className="text-2xl sm:text-3xl md:text-5xl">{rank}</span>
+              </p>
+
+              <div className="flex justify-center">
+                {/* Add link to prompt */}
+                <SignupFreeButton prompt="Upgrade your CV here" />
+              </div>
             </div>
           </div>
         )}
