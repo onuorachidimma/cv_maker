@@ -1,17 +1,18 @@
-import React from "react";
 import googleIcon from "../assets/images/google.svg";
+import { useNavigate } from "react-router-dom";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "./firebase";
 
 const GoogleLogin = () => {
-  
+  const navigate = useNavigate();
+
   const googleLogin = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log("User signed in:", result.user);
         if (result.user) {
-          window.location.href = "./dashboard";
+          navigate("/dashboard");
         }
       })
       .catch((error) => {
@@ -34,7 +35,7 @@ const GoogleLogin = () => {
           src={googleIcon}
           alt="Google Signup Image"
         />
-        <p>Continue with Google </p>
+        <p>Continue with Google</p>
       </button>
     </div>
   );
