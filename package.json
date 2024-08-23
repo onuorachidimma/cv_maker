@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "autogonai-node": "^1.0.6",
+    "axios": "^1.7.2",
     "firebase": "^10.12.4",
     "formik": "^2.4.6",
     "prop-types": "^15.8.1",
