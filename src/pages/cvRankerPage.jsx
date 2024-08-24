@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import HomepageNavbar from "../layouts/HomepageNavbar";
 import SectionHeading from "../layouts/homepageBody1/sectionHeading";
 import SignupFreeButton from "../layouts/buttons/signupFreeBtn";

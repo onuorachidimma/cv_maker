@@ -15,7 +15,6 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/rankCV" element={<CVRanker />} />
       <Route path="/dashboard" element={<DashboardPage />} />
-
       <Route
         path="/dashboard"
         element={
