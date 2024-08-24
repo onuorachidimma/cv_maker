@@ -1,4 +1,4 @@
-import { FaRegUserCircle, FaFile, FaGraduationCap, FaTools, FaRegIdCard } from "react-icons/fa";
+import { FaRegUserCircle, FaTools, FaRegIdCard } from "react-icons/fa";
 import { LuFile, LuGraduationCap } from "react-icons/lu";
 
 function DashboardAside() {

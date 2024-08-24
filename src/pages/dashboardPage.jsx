@@ -1,12 +1,14 @@
+import AddExperience from '../layouts/dashboard/AddExperience'
 import DashboardAside from '../layouts/dashboard/DashboardAside'
-import DashboardUserProfile from '../layouts/dashboard/DashboardUserProfile'
+// import DashboardUserProfile from '../layouts/dashboard/DashboardUserProfile'
 
 function dashboardPage() {
   return (
     <>
       <div className="flex">
         <DashboardAside />
-        <DashboardUserProfile />
+        <AddExperience />
+        {/* <DashboardUserProfile /> */}
       </div>
     </>
   )
