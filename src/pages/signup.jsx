@@ -74,7 +74,11 @@ const Signup = () => {
             By signing up, I agree to the
             <span className="text-customDeepGreen"> Terms of Use </span>
             and
-            <span className="text-customDeepGreen"> Privacy Policy</span>.
+            <span className="text-customDeepGreen">
+              {" "}
+              <Link to="/privacy-policy">Privacy Policy</Link>
+            </span>
+            .
           </p>
         </div>
       </div>
