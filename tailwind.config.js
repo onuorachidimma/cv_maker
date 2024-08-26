@@ -22,6 +22,7 @@ export default {
         customGreen: "#77CBA2",
         customLightSeaGreen: "#E4F5EC",
         customSeaGreen: "#77CBA2",
+        customDimGreen: "#76CAA2",
       },
       width: {
         "1/5": "20%",
@@ -31,7 +32,6 @@ export default {
         "986px": "986px",
         "840px": "840px",
         "134px": "134px",
-        
       },
       maxWidth: {
         "1700px": "1700px",
