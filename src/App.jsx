@@ -6,6 +6,8 @@ import Signup from "./pages/signup";
 import CVRanker from "./pages/cvRankerPage";
 import Dashboard from "./pages/dashboard";
 import PrivateRoute from "./components/privateRoutes";
+import CVBuilder from "./pages/CVBuilder";
+import CVTemplate from "./layouts/Cv-builder/CVTemplate1";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           </PrivateRoute>
         }
       />
+      <Route path="/cvbuilder" element={<CVBuilder />}></Route>
+      <Route path="/cvtemplate" element={<CVTemplate />}></Route>
     </Routes>
   );
 }
