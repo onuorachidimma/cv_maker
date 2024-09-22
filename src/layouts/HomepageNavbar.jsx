@@ -28,6 +28,7 @@ function HomepageNavbar() {
         >
           <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-11 text-lg lg:mr-[134px]">
             <Link to="/resumebuilder" className="resume-builder">
+              {" "}
               Resume Builder
             </Link>
             <Link to="">Tool</Link>
