@@ -9,6 +9,7 @@ import ResumeBuilder from "./pages/resumeBuilder";
 import Dashboard from "./pages/dashboard";
 import PrivateRoute from "./components/privateRoutes";
 
+
 function App() {
   return (
     <Routes>
@@ -18,6 +19,7 @@ function App() {
       <Route path="/rankCV" element={<CVRanker />} />
       <Route path="/templates" element={<TemplateSelector />} />
       <Route path="/resumebuilder" element={<ResumeBuilder />} />
+    
       <Route
         path="/dashboard"
         element={

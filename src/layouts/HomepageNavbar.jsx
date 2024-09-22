@@ -45,7 +45,26 @@ function HomepageNavbar() {
                 Sign up
               </Link>
             </button>
+
           </div>
+
+            </div>
+            <div className={`w-full lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'}`}>
+            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-11 text-lg lg:mr-[134px]">
+                <Link to="">Resume Builder</Link>
+                <Link to="">Tool</Link>
+                <Link to="/subscription">More</Link>
+            </div>
+            <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6 mt-4 lg:mt-0 text-lg">
+                <button className="bg-customGreen py-2.5 px-5 rounded-lg">
+                <Link to="/login" className="block lg:inline-block">Login</Link>
+                </button>
+                <button className="border border-customGreen py-2.5 px-5 rounded-lg">
+                <Link to="/signup" className="block lg:inline-block">Sign up</Link>
+                </button>
+            </div>
+            </div>
+
         </div>
       </div>
     </>
