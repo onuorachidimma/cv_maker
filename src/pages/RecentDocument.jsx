@@ -12,18 +12,15 @@ const RecentDocuments = () => {
 
   return (
     <div className="container mx-auto p-4">
-      {/* Page Title */}
+     
       <h2 className="text-lg md:text-xl font-bold mb-4">Recent Documents</h2>
 
-      {/* Responsive Button */}
       <button
         onClick={handleCreateCV}
         className="bg-customDarkGreen  text-white py-2 px-4 rounded-lg shadow-lg mb-4 hover:bg-customDarkGreen "
       >
         Create Your CV
       </button>
-
-      {/* Responsive Table */}
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border">
           <thead>
