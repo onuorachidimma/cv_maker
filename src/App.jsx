@@ -8,6 +8,8 @@ import TemplateSelector from "./pages/templateSelector";
 import ResumeBuilder from "./pages/resumeBuilder";
 import Dashboard from "./pages/dashboard";
 import PrivateRoute from "./components/privateRoutes";
+import RecentDocuments from "./pages/RecentDocument";
+
 
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
       <Route path="/rankCV" element={<CVRanker />} />
       <Route path="/templates" element={<TemplateSelector />} />
       <Route path="/resumebuilder" element={<ResumeBuilder />} />
-    
+      <Route path="/recentdocument" element={<RecentDocuments />} />
       <Route
         path="/dashboard"
         element={

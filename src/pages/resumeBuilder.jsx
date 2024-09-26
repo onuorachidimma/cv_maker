@@ -18,7 +18,7 @@ function ResumeBuilder() {
         <div className="flex flex-col md:flex-row justify-center items-center md:space-x-8 lg:space-x-16 px-4">
           <div className="flex flex-col items-center">
             <img src={firstImage} alt="buldcv-image" />
-            <p className="mt-6 text-lg text-center">
+            <p className="mt-6 text-lg text-center ml-4">
               Choose your professionally
               <span className="block">designed template</span>
             </p>
@@ -31,7 +31,7 @@ function ResumeBuilder() {
 
           <div className="flex flex-col items-center">
             <img src={secondImage} alt="buldcv-image" />
-            <p className="mt-6 text-lg text-center">
+            <p className="mt-6 text-lg text-center ml-4">
               Add pre-written examples
               <span className="block">to each section</span>
             </p>
@@ -44,15 +44,17 @@ function ResumeBuilder() {
           />
           <div className="flex flex-col items-center">
             <img src={thirdImage} alt="buldcv-image" />
-            <p className="mt-6 text-lg text-center">
+            <p className="mt-6 text-lg text-center ml-4">
               Download and start applying
             </p>
           </div>
         </div>
         <div className="flex items-center  flex-col">
-          <button className="px-20 md:px-32 lg:px-40 py-5 bg-customDimGreen text-white mt-12 lg:mt-20 mb-20 lg:mb-32 text-lg">
-            Let's get started
-          </button>
+          <Link>
+            <button className="px-20 md:px-32 lg:px-40 py-5 bg-customDimGreen text-white mt-12 lg:mt-20 mb-20 lg:mb-32 text-lg">
+              Let's get started
+            </button>
+          </Link>
         </div>
       </div>
 
