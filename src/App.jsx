@@ -9,6 +9,7 @@ import ResumeBuilder from "./pages/resumeBuilder";
 import Dashboard from "./pages/dashboard";
 import PrivateRoute from "./components/privateRoutes";
 
+
 function App() {
   return (
     <Routes>
