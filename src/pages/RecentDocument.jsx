@@ -18,7 +18,7 @@ const RecentDocuments = () => {
       {/* Responsive Button */}
       <button
         onClick={handleCreateCV}
-        className="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg mb-4 hover:bg-blue-600"
+        className="bg-customDarkGreen  text-white py-2 px-4 rounded-lg shadow-lg mb-4 hover:bg-customDarkGreen "
       >
         Create Your CV
       </button>
@@ -103,7 +103,7 @@ const RecentDocuments = () => {
               job applications with engaging and memorable introductions. Here
               are 45 alternative phrases to help you stand out from the crowd.
             </p>
-            <Link className="text-blue-500 cursor-pointer underline">
+            <Link className="text-customDarkGreen  cursor-pointer underline">
               Read Article
             </Link>
           </div>
@@ -122,7 +122,7 @@ const RecentDocuments = () => {
               connect with industry professionals, attend networking events, and
               leverage online platforms to expand your network.
             </p>
-            <Link className="text-blue-500 cursor-pointer underline">
+            <Link className="text-customDarkGreen  cursor-pointer underline">
               Learn More
             </Link>
           </div>
@@ -140,7 +140,7 @@ const RecentDocuments = () => {
               Learn how to create a compelling personal brand on platforms like
               LinkedIn, GitHub, or your own portfolio website.
             </p>
-            <Link className="text-blue-500 cursor-pointer underline">
+            <Link className="text-customDarkGreen cursor-pointer underline">
               Discover How
             </Link>
           </div>
