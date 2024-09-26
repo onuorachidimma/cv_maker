@@ -19,6 +19,7 @@ function App() {
       <Route path="/rankCV" element={<CVRanker />} />
       <Route path="/templates" element={<TemplateSelector />} />
       <Route path="/resumebuilder" element={<ResumeBuilder />} />
+    
       <Route
         path="/dashboard"
         element={
