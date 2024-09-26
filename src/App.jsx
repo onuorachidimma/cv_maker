@@ -11,6 +11,7 @@ import PrivateRoute from "./components/privateRoutes";
 import RecentDocuments from "./pages/RecentDocument";
 
 
+
 function App() {
   return (
     <Routes>
@@ -18,13 +19,9 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/rankCV" element={<CVRanker />} />
-
       <Route path="/templates" element={<TemplateSelector />} />
       <Route path="/resumebuilder" element={<ResumeBuilder />} />
       <Route path="/recentdocument" element={<RecentDocuments />} />
-
-     
-
       <Route
         path="/dashboard"
         element={
