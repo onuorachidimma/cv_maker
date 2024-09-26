@@ -1,5 +1,8 @@
 import editImage from "../assets/images/iconamoon_edit-fill (1).svg";
 import otherImage from "../assets/images/Vector.svg";
+import firstImage from "../assets/images/Frame 12501.svg";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const RecentDocuments = () => {
   // Function to handle the button click
@@ -25,7 +28,6 @@ const RecentDocuments = () => {
         <table className="min-w-full bg-white border">
           <thead>
             <tr>
-              {/* Adjust text size and padding based on screen size */}
               <th className="py-2 px-4 border-b text-left text-xs md:text-sm">
                 NAME
               </th>
@@ -85,10 +87,65 @@ const RecentDocuments = () => {
         </table>
       </div>
 
-      {/* Aligning heading with table */}
       <h1 className="text-2xl md:text-4xl mt-4 md:mt-6 font-bold">
-        Accelerating your job hunt
+        Accelerating Your Job Hunt
       </h1>
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {/* Card 1 */}
+        <div className="w-[388px] h-[460px] bg-white rounded-lg border border-customDarkGreen shadow-md overflow-hidden">
+          <img src={firstImage} alt="" className="w-full h-48 object-cover" />
+          <div className="p-4">
+            <h2 className="font-bold text-xl">
+              45 Engaging Ways to Introduce Your CV
+            </h2>
+            <p>
+              Tired of the same old "Please find attached my CV"? Spice up your
+              job applications with engaging and memorable introductions. Here
+              are 45 alternative phrases to help you stand out from the crowd.
+            </p>
+            <Link className="text-blue-500 cursor-pointer underline">
+              Read Article
+            </Link>
+          </div>
+        </div>
+
+        {/* Card 2 */}
+        <div className="w-[388px] h-[460px] bg-white rounded-lg border border-customDarkGreen shadow-md overflow-hidden">
+          <img src={firstImage} alt="" className="w-full h-48 object-cover" />
+          <div className="p-4">
+            <h2 className="font-bold text-xl">
+              Networking Strategies for Job Seekers
+            </h2>
+            <p>
+              In today's competitive job market, effective networking can be the
+              key to unlocking new opportunities. Discover innovative ways to
+              connect with industry professionals, attend networking events, and
+              leverage online platforms to expand your network.
+            </p>
+            <Link className="text-blue-500 cursor-pointer underline">
+              Learn More
+            </Link>
+          </div>
+        </div>
+
+        {/* Card 3 */}
+        <div className="w-[388px] h-[460px] bg-white rounded-lg border border-customDarkGreen shadow-md overflow-hidden">
+          <img src={firstImage} alt="" className="w-full h-48 object-cover" />
+          <div className="p-4">
+            <h2 className="font-bold text-xl">
+              Mastering Your Online Presence
+            </h2>
+            <p>
+              Your online presence can significantly impact your job search.
+              Learn how to create a compelling personal brand on platforms like
+              LinkedIn, GitHub, or your own portfolio website.
+            </p>
+            <Link className="text-blue-500 cursor-pointer underline">
+              Discover How
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
