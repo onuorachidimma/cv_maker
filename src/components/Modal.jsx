@@ -111,7 +111,7 @@ const Modal = ({ email, closeModal }) => {
               </div>
               <button
                 type="submit"
-                className="px-8 font-bold block py-2 mx-auto bg-customYellow rounded-xl hover:bg-yellow-300 transition duration-200"
+                className="px-8 font-bold block py-2 mx-auto bg-customYellow rounded-xl hover:bg-customBrightYellow transition duration-200"
               >
                 Sign up
               </button>

@@ -24,12 +24,6 @@ const Signup = () => {
         <div className="h-full flex flex-col">
           <div className="flex justify-between items-center">
             <img className="h-24 w-96" src={Logo} alt="Logo" />
-            <Link
-              to="/login"
-              className="rounded-lg border border-black bg-green-100 px-7 py-2 text-sm"
-            >
-              Login
-            </Link>
           </div>
           <div className="flex flex-col items-center justify-center h-full">
             <div className="flex flex-col items-center justify-center text-center gap-2">
@@ -45,21 +39,32 @@ const Signup = () => {
             </div>
 
             <div className="flex flex-col items-center justify-center">
-              <p className="mb-5 text-lg border-customLight">
+              <p className="my-7 text-sm border-customLight text-gray-400">
                 Or sign up with your Email
               </p>
               <input
-                placeholder="Email"
+                placeholder="Type your Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="rounded border border-gray-300 py-5 pl-4 px-24"
+                className="rounded border border-gray-300 mt-5 py-5 px-32"
               />
               <button
                 onClick={openModal}
-                className="mt-6 rounded-3xl bg-customYellow px-3 py-2.5 text-sm font-semibold"
+                className="mt-6 rounded-2xl bg-customYellow px-9 py-2.5 text-sm font-semibold"
               >
                 Sign Up - It's Completely Free
               </button>
+            </div>
+            <div className="mt-5">
+              <h3>
+                Already have an account?
+                <Link
+                  to="/login"
+                  className="text-customDeepGreen pl-2 underline-offset-2"
+                >
+                  Login
+                </Link>
+              </h3>
             </div>
           </div>
         </div>
@@ -67,9 +72,13 @@ const Signup = () => {
         <div className="flex items-center justify-center mt-5">
           <p className="text-xs md:text-sm border-customLight text-center">
             By signing up, I agree to the
-            <span className="customDeepGreen"> Terms of Use </span>
+            <span className="text-customDeepGreen"> Terms of Use </span>
             and
-            <span className="customDeepGreen"> Privacy Policy</span>.
+            <span className="text-customDeepGreen">
+              {" "}
+              <Link to="/privacy-policy">Privacy Policy</Link>
+            </span>
+            .
           </p>
         </div>
       </div>
