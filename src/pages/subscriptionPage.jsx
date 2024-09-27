@@ -2,6 +2,8 @@ import React from 'react';
 import TickIcon from "../assets/images/tick.svg"
 import YellowIcon from "../assets/images/yellow-tick.svg"
 
+
+
 //The tiny top right boxes
 const SubscriptionBox = () => {
   return (

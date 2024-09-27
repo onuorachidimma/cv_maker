@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import Logo from '../assets/images/Logo-whitebg.svg'
 import Hamburger from '../assets/images/hamburger menu.svg'
+import SubscriptionPage from '../pages/subscriptionPage';
+
 
 
 function HomepageNavbar() {
