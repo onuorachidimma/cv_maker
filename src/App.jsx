@@ -8,6 +8,7 @@ import Dashboard from "./pages/dashboard";
 import PrivateRoute from "./components/privateRoutes";
 import CVBuilder from "./pages/CVBuilder.jsx";
 import CVTemplate from "./layouts/Cv-builder/CVTemplate1";
+import SubscriptionPage from "./pages/subscriptionPage";
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/rankCV" element={<CVRanker />} />
+      <Route path="/subscription" element={<SubscriptionPage />} />
+
      
       <Route
         path="/dashboard"

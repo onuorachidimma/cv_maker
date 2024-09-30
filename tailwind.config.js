@@ -54,6 +54,7 @@ export default {
         '696px': '696px',
         '61px' : '61px'
       },
+     
     },
   },
   plugins: [],
