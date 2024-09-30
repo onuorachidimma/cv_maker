@@ -10,6 +10,7 @@ const CVRanker = () => {
   const [fileUrl, setFileUrl] = useState(null);
   const [jobDescription, setJobDescription] = useState("");
   const [rank, setRank] = useState(null);
+  const [loading, setLoading] = useState(false); // New loading state
   const [showModal, setShowModal] = useState(false);
 
   const handleFileChange = (event) => {
@@ -31,6 +32,8 @@ const CVRanker = () => {
     const formData = new FormData();
     formData.append("job_description", jobDescription);
     formData.append("resume_file", file);
+
+    setLoading(true); // Set loading to true when ranking starts
 
     try {
       const response = await fetch(
@@ -60,6 +63,8 @@ const CVRanker = () => {
     } catch (error) {
       console.error("Error ranking resume:", error);
       alert("An error occurred while ranking the resume. Please try again.");
+    } finally {
+      setLoading(false); // Set loading to false once the request is complete
     }
   };
 
@@ -125,6 +130,14 @@ const CVRanker = () => {
           >
             Rank CV
           </button>
+        )}
+
+        {/* Loader */}
+        {loading && (
+          <div className="flex justify-center items-center mt-8">
+            <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
+            <p className="ml-4 text-lg font-semibold">Ranking your CV...</p>
+          </div>
         )}
 
         {showModal && (
