@@ -26,8 +26,8 @@ function HomepageNavbar() {
             </div>
             <div className={`w-full lg:flex lg:items-center lg:w-auto ${isOpen ? 'block' : 'hidden'}`}>
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-11 text-lg lg:mr-[134px]">
-                <Link to="">Resume Builder</Link>
-                <Link to="">Tool</Link>
+                <Link to="/cvbuilder">Resume Builder</Link>
+                <Link to="#">Tool</Link>
                 <Link to="/subscription">Subscriptions</Link>
             </div>
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6 mt-4 lg:mt-0 text-lg">

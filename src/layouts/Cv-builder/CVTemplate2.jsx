@@ -1,5 +1,5 @@
-import React from 'react';
-import jsPDF from 'jspdf';
+import React from "react";
+import jsPDF from "jspdf";
 
 const CVTemplate = ({ formData }) => {
   const { name, summary, contact, experience, skills, education } = formData;
@@ -28,7 +28,11 @@ const CVTemplate = ({ formData }) => {
       experience.forEach((exp, index) => {
         const yPosition = 120 + index * 20;
         doc.setFontSize(12);
-        doc.text(`${exp.position || "Position"} at ${exp.company || "Company"}`, 20, yPosition);
+        doc.text(
+          `${exp.position || "Position"} at ${exp.company || "Company"}`,
+          20,
+          yPosition
+        );
         doc.text(exp.description || "Job description", 20, yPosition + 10);
       });
     } else {
@@ -53,7 +57,11 @@ const CVTemplate = ({ formData }) => {
       education.forEach((edu, index) => {
         const yPosition = 210 + index * 20;
         doc.setFontSize(12);
-        doc.text(`${edu.degree || "Degree"} at ${edu.institution || "Institution"}`, 20, yPosition);
+        doc.text(
+          `${edu.degree || "Degree"} at ${edu.institution || "Institution"}`,
+          20,
+          yPosition
+        );
         doc.text(`Year: ${edu.year || "Year"}`, 20, yPosition + 10);
       });
     } else {
@@ -96,9 +104,7 @@ const CVTemplate = ({ formData }) => {
       <h2 className="font-bold text-xl mb-2">Skills</h2>
       <ul className="list-disc pl-5">
         {skills.length > 0 ? (
-          skills.map((skill, index) => (
-            <li key={index}>{skill || "Skill"}</li>
-          ))
+          skills.map((skill, index) => <li key={index}>{skill || "Skill"}</li>)
         ) : (
           <p>No skills added yet.</p>
         )}
@@ -117,7 +123,10 @@ const CVTemplate = ({ formData }) => {
         <p>No education details added yet.</p>
       )}
 
-      <button onClick={handleDownload} className="bg-green-500 text-white px-4 py-2 rounded">
+      <button
+        onClick={handleDownload}
+        className="bg-green-500 text-white px-4 py-2 rounded"
+      >
         Download CV as PDF
       </button>
     </div>
