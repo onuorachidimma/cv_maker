@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import Logo from '../assets/images/Logo-whitebg.svg'
 import Hamburger from '../assets/images/hamburger menu.svg'
+import SubscriptionPage from '../pages/subscriptionPage';
+
 
 
 function HomepageNavbar() {
@@ -26,7 +28,7 @@ function HomepageNavbar() {
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-11 text-lg lg:mr-[134px]">
                 <Link to="">Resume Builder</Link>
                 <Link to="">Tool</Link>
-                <Link to="/subscription">More</Link>
+                <Link to="/subscription">Subscriptions</Link>
             </div>
             <div className="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6 mt-4 lg:mt-0 text-lg">
                 <button className="bg-customGreen py-2.5 px-5 rounded-lg">
