@@ -21,6 +21,7 @@ export default {
         customGreen: '#77CBA2',
         customLightSeaGreen: '#E4F5EC',
         customSeaGreen: '#77CBA2',
+        customLightSeaGreen: '#E7F6EE',
       },
       width: {
         '1/5': '20%',
