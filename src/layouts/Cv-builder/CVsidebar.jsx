@@ -10,10 +10,6 @@
 
 // // Similar functions can be written for DOCX and PDF exports
 
-
-
-
-
 // // src/components/Sidebar.js
 // import React from "react";
 // import {
@@ -53,8 +49,6 @@
 
 // export default Sidebar;
 
-
-
 import React from "react";
 import {
   ContactIcon,
@@ -92,5 +86,3 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
 };
 
 export default Sidebar;
-
-
