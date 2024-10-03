@@ -17,8 +17,8 @@ function App() {
           <div className="w-1/2 bg-white p-6 rounded-md shadow-md">
             <img
               src={MelanCoverLetter}
-              alt="Melan"
               className="rounded-md w-full"
+               alt="Melan"
             />
           </div>
 
